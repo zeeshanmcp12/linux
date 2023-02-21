@@ -40,6 +40,51 @@ Ways to find out the command or read the documentation:
   - Type some words and press TAB to see the command
   - systemctl
 
+## Create, Delete, Copy and Move Files and Directories
+
+- What is a file system tree?
+  - top notch is root (/) directory and then sub directories
+  - / -> root directory
+  - /home -> under root
+    - /abdullah
+    - /asim
+  - /var
+    - log
+  - /etc
+    - nfsmount.conf
+- What is an absolute path?
+  - Complete path of file or directory
+    - /home/zeeshan/scripts/script.sh
+- What is a relative path?
+  - Which is refer to as short path
+  - ../../script.sh
+- Listing files and directories
+  - ls
+  - ls -a
+    - -a comes from the word all
+  - ls -l
+    - list files and directories in long listing format
+  - ls -al
+  - ls -h
+    - shows size in human readable format like bytes, kilobytes and mega bytes
+    - ls -alh
+- Copy files/directories
+  - cp -r -> recursive
+  - cp -r [source] [destination]
+  - cp -r Receipts/ BackupDir/
+    - copy everything from Receipts to BackupDir
+- Move files/directories
+  - mv Receipt.pdf Receipts/
+  - mv Receipt.pdf OldReceipt.pdf
+    - to rename a file
+  - mv Receipts/ OldReceipts/
+    - to rename a directory
+    - we don't need to mention -r flag while changing the directory as mv takes care of that.
+- Remove the file/directory
+  - rm <fileName>
+  - rm -r Receipts/
+    - to remove the directory
+
 ## Some essentials
 
 - Console
