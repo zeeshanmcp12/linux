@@ -53,11 +53,21 @@ Ways to find out the command or read the documentation:
   - /etc
     - nfsmount.conf
 - What is an absolute path?
+  - Always start out with the root directory represented by slash (/)
   - Complete path of file or directory
     - /home/zeeshan/scripts/script.sh
+    - cd /var/log
 - What is a relative path?
+  - pwd -> print working directory
+    - starting directory for a user might be /home/zeeshan/
+    - root or super user will be from /root directory
   - Which is refer to as short path
+  - to change the directory using reletive path:
+    - cd ..
   - ../../script.sh
+  - ../ -> means go one directory up
+  - ../../<filename>
+  - cd - -> go to previous directory
 - Listing files and directories
   - ls
   - ls -a
@@ -65,12 +75,27 @@ Ways to find out the command or read the documentation:
   - ls -l
     - list files and directories in long listing format
   - ls -al
-  - ls -h
+  - ls -h -> -h -> human readable format
     - shows size in human readable format like bytes, kilobytes and mega bytes
     - ls -alh
+- Change Directory
+  - cd / -> go to root directory
+  - cd - -> go to previous directory
+  - cd ~ -> go to home directory
+  - cd .. -> go one directory up
+- Create New file
+  - touch <filename>
+  - touch /home/zeeshan/<filename> # the way to create a file using absolute path
+  - touch ../abdullah/<filename> # if we are in /zeeshan directory # the way to create a file using relative path
+    - ../ # go one directory up which is /home
+    - /abdullah # home dir for abdullah
+- Create new directory
+  - mkdir # comes from 'make directory'
 - Copy files/directories
   - cp -r -> recursive
   - cp -r [source] [destination]
+    - -r is a command line option (or called flag) that means copy the directory recursively.
+      - which also means, copy the directory and all the files inside this directory.
   - cp -r Receipts/ BackupDir/
     - copy everything from Receipts to BackupDir
 - Move files/directories
@@ -84,6 +109,9 @@ Ways to find out the command or read the documentation:
   - rm <fileName>
   - rm -r Receipts/
     - to remove the directory
+
+## Create and manage hard links
+
 
 ## Some essentials
 
