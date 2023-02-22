@@ -89,6 +89,8 @@ Ways to find out the command or read the documentation:
   - touch ../abdullah/<filename> # if we are in /zeeshan directory # the way to create a file using relative path
     - ../ # go one directory up which is /home
     - /abdullah # home dir for abdullah
+  - echo "Hello world" > /Hello/hello.txt
+    - this will create the file named "hello.txt" and write "Hello world" text in that file.
 - Create new directory
   - mkdir # comes from 'make directory'
 - Copy files/directories
