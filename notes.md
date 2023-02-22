@@ -2,14 +2,14 @@
 
 ## Essential commands
 
-## Login to Linux
+### Login to Linux
 
 - local with text-mode
 - local with gui
 - remote with text-mode -> console -> works with ssh
 - remote with gui -> works with VNC or Remote desktop
 
-## SSH
+### SSH
 
 - SSH -> Secure shell
 - telnet -> not secured method to connect to as it does not encrypt anything on same network.
@@ -20,7 +20,7 @@
 - SSH client
   - This client will run on our local laptop/desktop
 
-## Read, and use system documentation
+### Read, and use system documentation
 
 Ways to find out the command or read the documentation:
 
@@ -40,7 +40,7 @@ Ways to find out the command or read the documentation:
   - Type some words and press TAB to see the command
   - systemctl
 
-## Create, Delete, Copy and Move Files and Directories
+### Create, Delete, Copy and Move Files and Directories
 
 - What is a file system tree?
   - top notch is root (/) directory and then sub directories
@@ -112,8 +112,42 @@ Ways to find out the command or read the documentation:
   - rm -r Receipts/
     - to remove the directory
 
-## Create and manage hard links
+### Create and manage hard links
 
+- Things that needs to be understand
+  - Inodes
+    - Filesystems in linux like XFS, Ext4 and others keeps track of data with the help of some number that is called Inode.
+    - Any file might have blocks of data scattered all over the disk. This Inode remembers where all the pieces are stored.
+    - Each file and directory has it's own Inode number.
+    - This Inode number also keeps track of metadata, things like Permissions, Last access time, file owner etc
+    - The **stat** command helps us to find out this data.
+    - stat
+      - stat hello.txt
+  - Hard Link
+    - Why we use **Hard Link**?
+    - Hard Link is useful when we want to share the data between two users.
+    - In this case, we do not need to copy the data again.
+    - File will be accessible through Inode number.
+    - Even if one user deleted the file, it will remain at the second user unless both users wants to delete the file.
+    - Links are shown when we execute stat command following the name of file. For example:
+      - stat hello.txt
+    - Command to create the Hard link
+      - ln <path-to-target-file> <path-to-link-file>
+      - ln /home/abdullah/hello.txt /home/ahmed/hello.txt
+        - it might give "permission denied" error. So execute the command accordingly.
+    - Limitations and Considerations
+      - We can only `Hard Link` the file and not the directory
+      - We cannot `Hard Link` the file in other file system. For example /home/abdullah/hello.txt to /mnt/backupFiles/hello.txt
+        - Because both are different file systems.
+      - Make sure you have the proper permission to create the Link file at the destination. for example:
+        - We need write permission at /home/ahmed/hello.txt
+      - Make sure that all users involved have the write permission to the file.
+        - Better to create a group
+          - groupadd <group-name>
+        - Make all users involved part of that group
+          - usermod -aG <group-name> <users>
+        - Assign 660 permission to the file
+          - chmod 660 <file>
 
 ## Some essentials
 
