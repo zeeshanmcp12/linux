@@ -53,6 +53,7 @@ Ways to find out the command or read the documentation:
   - /etc
     - nfsmount.conf
 - What is an absolute path?
+  - Absolute paths always start out with the root directory /. Then we specify the sub-directories we want to descend into, /home/bob/Documents/Invoice.pdf is an example of such a path. In this case, first home, then bob, then Documents. We can see the sub-directory names are separated by a / and we finally get to the file we want to access i.e Invoice.pdf. An absolute path can end with the name of a file or a directory.
   - Always start out with the root directory represented by slash (/)
   - Complete path of file or directory
     - /home/zeeshan/scripts/script.sh
@@ -100,6 +101,8 @@ Ways to find out the command or read the documentation:
       - which also means, copy the directory and all the files inside this directory.
   - cp -r Receipts/ BackupDir/
     - copy everything from Receipts to BackupDir
+  - cp -p <source_file> <destination>
+    - -p -> preserves all the attributes during copy operations.
 - Move files/directories
   - mv Receipt.pdf Receipts/
   - mv Receipt.pdf OldReceipt.pdf
