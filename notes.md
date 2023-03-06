@@ -164,3 +164,5 @@ Ways to find out the command or read the documentation:
   - it shows the IP address of the system.
 - ssh <username>@<ip_address_of_the_remote_system>
   - ssh zeeshan@192.168.0.7
+- stat <filename>
+  - This will display the timestamp with all details like HH, MM, SS and date etc
